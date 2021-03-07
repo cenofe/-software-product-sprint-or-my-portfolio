@@ -26,9 +26,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/server-stats")
 public final class ServerStatsServlet extends HttpServlet {
 
-    /**
-     *
-     */
+
     private static final long serialVersionUID = 1L;
     private final Date startTime = new Date();
 
