@@ -32,22 +32,21 @@
   </body>
 </html>
 
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Fetch Example</title>
+    <title>Fetch</title>
+    <link rel="stylesheet" href="style.css">
     <script src="script2.js"></script>
   </head>
   <body>
-    <h1>Fetch Example</h1>
-    <p>Click this button to see the fetch work.</p>
-    <button onclick="showFetch();">
-      Get Fetch
-    </button>
-    <p id="fetch-container"></p>
-    <p>Click <a href="/fetch">here</a> to see the server response directly.</p>
+    <div id="content"></div>
+      <h1>Fetch Example</h1>
+      <p>Click here to add fetch statistics to this page:</p>
+      <button onclick="getFetch()">Fetch stats!</button>
+      <ul id="fetch-container"></ul>
+      <p>Click <a href="/fetch">here</a> to see the server response directly.</p>
+    </div>
   </body>
 </html>
-
-

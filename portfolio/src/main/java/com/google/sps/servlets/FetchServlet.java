@@ -15,11 +15,13 @@
 package com.google.sps.servlets;
 
 import java.io.IOException;
-import java.util.Date;
+import java.util.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
 
 /** Servlet that responds with the current date. */
 @WebServlet("/fetch")
@@ -28,9 +30,26 @@ public class FetchServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
+
     @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     response.setContentType("text/html;");
-    response.getWriter().println("testing fetch " + new Date());
+
+     String [] comment = {"me", "myself", "and I"};
+     ArrayList<String> comment_lst =new ArrayList<String>();
+     comment_lst.add("colors");
+     comment_lst.add("colors2");
+     comment_lst.add("colors3");
+    
+     Gson gson = new Gson();
+     String json = gson.toJson(comment_lst);
+
+
+    response.setContentType("application/json;");
+    response.getWriter().println(json);
   }
-}
+  
+ 
+  }
+
+
