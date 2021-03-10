@@ -7,3 +7,50 @@
 #greeting-container {
   margin-top: 20px;
 }
+
+body {
+    background: #ffffff url("https://data.whicdn.com/images/237505965/original.gif") repeat center center scroll;
+      
+}
+
+img.resize {
+  width:500px;
+  height:500px;
+}
+/* The navbar container */
+.topnav {
+  overflow: hidden;
+  background-color: rgb(240,255,240);
+  padding: 20px 5px;
+}
+
+.topnav {
+    border: 3.4px rgb(255,0,255);
+    border-style: inset inset inset;
+    border-radius: 12px;
+     position: fixed;
+        top: 0;
+        width: 97.5%;
+        text-align: center;
+        display: inline-block;
+}
+
+
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 50px 16px;
+  text-decoration: none;
+}
+
+/* Links - change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
