@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/hey")
 public class PortfolioPageViewServlet extends HttpServlet {
 
-    private static final long serialVersionUID = 1L;
     private int pageViews = 0;
 
   @Override
