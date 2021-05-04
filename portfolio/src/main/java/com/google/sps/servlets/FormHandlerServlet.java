@@ -1,5 +1,11 @@
+
 package com.google.sps.servlets;
 
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.FullEntity;
+import com.google.cloud.datastore.KeyFactory;
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +26,15 @@ public class FormHandlerServlet extends HttpServlet {
 
     // Write the value to the response so the user can see it.
     response.getWriter().println("You submitted: " + textValue);
+
+    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("Task");
+    FullEntity taskEntity =
+        Entity.newBuilder(keyFactory.newKey())
+            .set("textValue", textValue)
+            .build();
+    datastore.put(taskEntity);
+
     response.sendRedirect("http://cenofe-sps-spring21.appspot.com/");
   }
 }
