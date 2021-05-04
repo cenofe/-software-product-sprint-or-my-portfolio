@@ -14,25 +14,36 @@
 
 package com.google.sps.servlets;
 
+import com.google.gson.Gson;
 import java.io.IOException;
-import java.util.Date;
+import java.util.ArrayList;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Servlet that responds with the current date. */
-@WebServlet("/date")
-public class DateServlet extends HttpServlet {
+@WebServlet("/fetch")
+public class FetchServlet extends HttpServlet {
 
-    /**
-     *
-     */
-    private static final long serialVersionUID = 1L;
 
     @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     response.setContentType("text/html;");
-    response.getWriter().println("The server's current date is " + new Date());
+
+     ArrayList<String> comment_lst =new ArrayList<String>();
+     comment_lst.add("colors");
+     comment_lst.add("colors2");
+     comment_lst.add("colors3");
+    
+     Gson gson = new Gson();
+     String json = gson.toJson(comment_lst);
+
+
+    response.setContentType("application/json;");
+    response.getWriter().println(json);
   }
-}
+  
+ 
+  }
+
+
